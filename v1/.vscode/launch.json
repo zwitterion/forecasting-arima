@@ -1,0 +1,161 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Predictor",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/predict.py",
+            "args": [
+                "-e", "dev",
+                "-t", "azure_blob",
+                "-m", "modelT",
+                "-p", "12"
+            ]
+        },
+        {
+            "name": "Python: Trainer",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/train.py",
+            "args": [
+                "-e", "dev",
+                "-t", "azure_blob",
+                "-d", "co2.csv",
+                "-m", "modelT",
+                "-mt", "arima"
+            ]
+        },
+        {
+            "name": "Python: Data Reader Config",
+            "type": "python",
+            "request": "launch",
+            "program": "./src/data_reader.py",
+            "args": [
+                "dataset1.csv"
+            ]
+        },
+        {
+            "name": "Python: Data Uploader Config",
+            "type": "python",
+            "request": "launch",
+            "program": "./src/data_uploader.py",
+            "args": [
+                "test_data/oppty_by_sku.csv",
+                "dataset1.csv"
+
+            ]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}"
+        },
+        {
+            "name": "Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "${workspaceFolder}",
+            "port": 3000,
+            "secret": "my_secret",
+            "host": "localhost"
+        },
+        {
+            "name": "Python: Terminal (integrated)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Terminal (external)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Python: Django",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": [
+                "runserver",
+                "--noreload",
+                "--nothreading"
+            ],
+            "debugOptions": [
+                "RedirectOutput",
+                "Django"
+            ]
+        },
+        {
+            "name": "Python: Flask (0.11.x or later)",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ]
+        },
+        {
+            "name": "Python: Module",
+            "type": "python",
+            "request": "launch",
+            "module": "module.name"
+        },
+        {
+            "name": "Python: Pyramid",
+            "type": "python",
+            "request": "launch",
+            "args": [
+                "${workspaceFolder}/development.ini"
+            ],
+            "debugOptions": [
+                "RedirectOutput",
+                "Pyramid"
+            ]
+        },
+        {
+            "name": "Python: Watson",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/console.py",
+            "args": [
+                "dev",
+                "runserver",
+                "--noreload=True"
+            ]
+        },
+        {
+            "name": "Python: All debug Options",
+            "type": "python",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${file}",
+            "module": "module.name",
+            "env": {
+                "VAR1": "1",
+                "VAR2": "2"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": [
+                "arg1",
+                "arg2"
+            ],
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        }
+    ]
+}

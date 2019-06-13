@@ -1,0 +1,17 @@
+applicationinsights
+Flask
+numpy
+pandas
+scikit-learn
+statsmodels
+scipy
+futures
+requests
+azure-common
+azure-nspkg
+azure-storage-blob
+azure-storage-common
+azure-storage-nspkg
+azure-storage-queue
+
+
